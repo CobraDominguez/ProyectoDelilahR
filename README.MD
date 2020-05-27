@@ -24,12 +24,15 @@ Instalación 🔧
 
 
 Ejecutando las pruebas ⚙️
+
 Para teniendio isntalado el postman y corrido el script de testeo (opcional), se puede realizar una prueba rapida importando el archivo adjunto "delilah.postman_collection.json" desde postman, el mismo contiene 49 requeest para realizar una prueba integral de las rutas.
 
 
 Construido con 🛠️
+
 NodeJS , JAVASCRIPT, MySQL
 
 
 Autor ✒️
+
 Dominguez Carlos Alberto
