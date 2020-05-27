@@ -1,0 +1,20 @@
+{
+  "name": "delilah",
+  "version": "1.0.0",
+  "description": "proyecto Delilah Resto",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Carlos Dominguez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.25.3",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.9"
+  }
+}
