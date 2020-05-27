@@ -1,9 +1,14 @@
 Proyecto Delilah Restó
+
 Una API para la gestion de pedidos, productos y usuarios por roles.
 
+
+
 Comenzando 🚀
+
 Estas instrucciones te permitirán a partir de una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 a) descarga el proyecto desde github o bien a partir del archivo RAR adjunto a una ruta local en su maquina.
+
 
 
 Pre-requisitos 📋
@@ -12,6 +17,8 @@ Para el codigo:
     tener instalado visual Studio Code.
 Para Testeo:
     tener instalado Postman.
+
+
 
 Instalación 🔧
 
@@ -28,9 +35,12 @@ Ejecutando las pruebas ⚙️
 Para teniendio isntalado el postman y corrido el script de testeo (opcional), se puede realizar una prueba rapida importando el archivo adjunto "delilah.postman_collection.json" desde postman, el mismo contiene 49 requeest para realizar una prueba integral de las rutas.
 
 
+
 Construido con 🛠️
 
 NodeJS , JAVASCRIPT, MySQL
+
+
 
 
 Autor ✒️
