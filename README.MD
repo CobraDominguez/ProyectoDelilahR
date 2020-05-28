@@ -22,7 +22,9 @@ Los estados existentes son los siguientes:
 
 Todos los estados pedidos hasta que son Confirmados por el usuario tienen estado "Nuevo" y no salen en la lista del administrador.
 
-Tiene el siguiente Flujo de trabajo, un usuario quiere generar un pedido, selecciona el primer producto y su cantidad y lo agrega al carrito, puede realizar esta accion tantas veces como quiera hasta que considere que su carrito ya esta finalizado, es entonces en donde el mismo lo confirma y pasa a un estado "Pendiente" (se genero el pedido con la lista de productos seleccionados por el usuario), donde el/los Administradores podran ver y confirmar, una vez que estos lo confirman pasa a estado "Confirmado".
+Tiene el siguiente Flujo de trabajo, un usuario quiere generar un pedido, selecciona el primer producto y su cantidad y lo agrega al carrito, puede realizar esta accion tantas veces como quiera hasta que considere que su carrito ya esta finalizado, es entonces en donde el mismo lo confirma y pasa a un estado "Pendiente" actualizando el total y la fecha  (se genero el pedido con la lista de productos seleccionados por el usuario), donde el/los Administradores podran ver y confirmar, una vez que estos lo confirman pasa a estado "Confirmado".
+El sisitema no hace eliminacion de registros de Usuarios y productos dado que los mismo podrian dejar inconsistentes los datos de la base de datos, por ello las tablas tienen un campo "activo" el cual indica si esta o no eliminado. A si mismo los pedidos, tampoco se elimina simplemente se cancelan (no es tenido en cuenta).
+Sin embargo, el registro de productos favoritos puede eliminarse.
 
 
 los Medios de Pagos Cargados son los siguientes:
