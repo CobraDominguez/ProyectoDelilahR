@@ -8,6 +8,29 @@ Comenzando 🚀
 
 Estas instrucciones te permitirán a partir de una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 a) descarga el proyecto desde github o bien a partir del archivo RAR adjunto a una ruta local en su maquina.
+Consideraciones:
+
+Los estados existentes son los siguientes:
+1 Nuevo
+2 Pendinte
+3 Confirmado
+4 Preparando
+5 Enviando
+6 Entregado
+7 Cancelado
+
+Todos los estados pedidos hasta que son Confirmados por el usuario tienen estado "Nuevo" y no salen en la lista del administrador.
+
+los Medios de Pagos Cargados son los siguientes:
+"1"	"Efectivo"
+"2"	"Credito VISA"
+"3"	"Credito AMEX"
+"4"	"Credito Master"
+"5"	"Debito VISA"
+"6"	"Debito Master"
+
+
+
 
 
 
@@ -28,6 +51,15 @@ Instalación 🔧
     Ejecutar el archivo "STARTUP.sql" en una pestaña apuntando a la base de Delilahdb. Este archivo carga los valores necesario para una correcta implementacion del sistema.
 3) Ejecutar Carga de Testeo (opcional: solo si se desea realizar pruebas con datos precargados)
     Ejecutar el archivo "Productos_Test.sql" en una pestaña apuntando a la base de Delilahdb. Este archivo carga los registros necesarios para inciar una prueba pasando por todos los circuitos disponibles en la API.
+4) Cargar los datos de conexion a la base de datos en el archivo conexion.js ubicado en "./Controladores" con los siguientes datos:
+
+        dataBase =  Nombre de la Base de Datos por defecto: "DelilahDB"
+        puerto = Puerto de conexion a la Base de Datos por defecto: '3306'
+        tipoBase = que motor de base de datos emplea, por ddefecto: 'mysql'
+        host = Direccion de acceso a la base de datos, por defecto: 'localhost'
+        usuariodb = Usuario de conexion a la Base de Datos, por defecto:  'root'
+        passworddb = la clave de conexion a la base de datos, por defecto: ''
+
 
 
 Ejecutando las pruebas ⚙️
