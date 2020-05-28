@@ -194,7 +194,7 @@ async function verificarCarritoUnico(req, res, next) {
 
 function verificarDatosupdateCarrito(req, res, next) {
     const { idpedido, idestado, idpago } = req.body;
-    if (idpedido == undefined || idpedido == undefined) {
+    if (idpedido == undefined || idestado == undefined) {
         res.status(400);
         res.json({codigo: '400', error : "Faltan valores, por favor verifique"});
     } else if (idestado == 2 && idpago == undefined) {
