@@ -85,6 +85,29 @@ router.delete('/:id', verificarToken, validarPertenecniaPedido, async function (
     }
 });
 
+router.delete('/carrito/:id', verificarToken, validarPertenecniaPedido, validarDatosDeleteCarrito, async function (req, res) {
+    try {
+        if (!isNaN(parseInt(req.params.id))) {
+            const { idproducto, vaciar } = req.body;
+            let resultado = await RealizarEliminacionPorCarritoID(idproducto, vaciar, req.params.id);
+            if (resultado.length) {
+                res.status(201);
+                res.json("ok");    
+            } else {
+                res.status(400);
+                res.json({ codigo: '400', mensaje : "no pudo completar la operacion, verifique que los datos pertenezcan al carrito"});
+            }            
+        } else {
+            res.status(404);
+            res.json({ codigo: '404', mensaje : "no es una ruta valida"});
+        }
+    } catch (error) {
+        res.status(400);
+        res.json({ codigo: '400', mensaje : "error al intentar obtener pedido"});
+    }
+});
+
+
 //  FUNCIONES //////////////////////////////////////////////////////////////
 
 
@@ -149,6 +172,21 @@ async function CambiarEstadoPedido(idped, idestado, idpago, rol, idusu) {
             };
         };
     };
+};
+
+async function RealizarEliminacionPorCarritoID(idprod, vaciar, idped) {
+      try {
+        if (vaciar == true) {
+            let ssql = sqlPedidos.sql_vaciarcarritoDetalle(idped);
+            var respuesta = await cn.query(ssql);
+        } else {
+            let ssql1 = sqlPedidos.sql_EliminarProductocarrito(idprod, idped);
+            var respuesta = await cn.query(ssql1);
+        }
+        return respuesta;
+      } catch (error) {
+          
+      }
 };
 
 
@@ -223,6 +261,16 @@ async function validarPertenecniaPedido(req, res,next) {
         res.status(400);
         res.json({codigo: '400', error : "error al validar solicitud, verifique los datos enviados"});
     }
+};
+
+async function validarDatosDeleteCarrito(req, res, next) {
+    const {idproducto} = req.body;
+    if (!idproducto) {
+        res.status(400);
+        res.json({codigo: '400', error : "Faltan valores, por favor verifique"});
+    } else {
+        next();
+    };  
 };
 
 // FIN FUNCIONES  /////////////////////////////////////////////////////////

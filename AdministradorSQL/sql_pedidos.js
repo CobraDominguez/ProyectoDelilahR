@@ -72,6 +72,17 @@ function sql_esPedidoDelUsuario(id, idusu) {
     return sql;
 };
 
+function sql_EliminarProductocarrito(idprod, idped) {
+    var sql = "delete FROM detalle_pedido WHERE id_producto = " + idprod + " AND id_pedido = " + idped + " AND EXISTS (SELECT id FROM pedidos  WHERE id = id_pedido AND id_estado = 1)";
+    return sql;
+};
+
+function sql_vaciarcarritoDetalle(id) {
+    var sql = "delete FROM detalle_pedido WHERE id_pedido = " + id + " AND EXISTS (SELECT id FROM pedidos  WHERE id = id_pedido AND id_estado = 1)";
+    return sql;
+};
+
+
 module.exports = { 
     sql_ListadoPedidos,
     sql_ConsultaPedidoporID,
@@ -83,5 +94,7 @@ module.exports = {
     sql_confirmarpedidousuario,
     sql_cambiarEstadoPedido,
     sql_cancelarPedido,
-    sql_esPedidoDelUsuario
+    sql_esPedidoDelUsuario,
+    sql_EliminarProductocarrito,
+    sql_vaciarcarritoDetalle
 };

@@ -22,6 +22,21 @@ Los estados existentes son los siguientes:
 
 Todos los estados pedidos hasta que son Confirmados por el usuario tienen estado "Nuevo" y no salen en la lista del administrador.
 
+Los ususarios cargados en el sistema son:
+
+-- Administrador:
+    usuario:  admind
+    password: parola123
+
+-- usuario Normal:
+    usuario:  test
+    password: normal20
+
+
+
+Consideracion:
+
+La creacion de usuarios siempre va a ser en modo normal, de requerir cambiar el rol del mismo, un usuario de tipo administrador, debera actualizar la informacion del rol a modificar en la ruta correspondiente a la actualizacion de usuario (si bien el usuario que actualiza sus propios datos tambien tiene acceso al rol, se entiende que el frontend valida el mismo y al no ser administrador no permite la modificacion del rol y envia por default el valor correspondiente del usuario)
 
 
 WORKFLOW:
@@ -32,6 +47,9 @@ Sin embargo, el registro de productos favoritos puede eliminarse.
 
 
 
+Para mas informacion sobre los parametros tipos de datos aceptados y las rutas disponibles, revisar el archivo "openapi.yalm" el cual se encuentra adjunto en el proyecto; el mismo lo podra consultar (importar) desde la pagina de Swagger editor , este contiene detalladamente todas las rutas y párametros que acepta asi como tambien cuales parametros son opcionales y que valores viajan por defecto.
+
+
 los Medios de Pagos Cargados son los siguientes:
 "1"	"Efectivo"
 "2"	"Credito VISA"
@@ -39,8 +57,6 @@ los Medios de Pagos Cargados son los siguientes:
 "4"	"Credito Master"
 "5"	"Debito VISA"
 "6"	"Debito Master"
-
-
 
 
 

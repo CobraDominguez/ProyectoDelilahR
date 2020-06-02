@@ -68,7 +68,7 @@ router.put('/:id', verificarToken, VerificarDatosUpdate, async function (req, re
             res.json('ok');
         } else {
             res.status(400);
-            res.json({ codigo: '400', mensaje : "usuario invalido para esta consulta"});
+            res.json({ codigo: '400', mensaje : "usuario invalido para esta consulta o datos en formato incorrecto, verifique"});
         };
     } else {
         res.status(404);
