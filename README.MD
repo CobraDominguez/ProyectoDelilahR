@@ -47,7 +47,7 @@ Sin embargo, el registro de productos favoritos puede eliminarse.
 
 
 
-Para mas informacion sobre los parametros tipos de datos aceptados y las rutas disponibles, revisar el archivo "openapi.yalm" el cual se encuentra adjunto en el proyecto; el mismo lo podra consultar (importar) desde la pagina de Swagger editor , este contiene detalladamente todas las rutas y párametros que acepta asi como tambien cuales parametros son opcionales y que valores viajan por defecto.
+Para mas informacion sobre los parametros tipos de datos aceptados y las rutas disponibles, revisar el archivo "openapi.yaml" el cual se encuentra adjunto en el proyecto; el mismo lo podra consultar (importar) desde la pagina de Swagger editor , este contiene detalladamente todas las rutas y párametros que acepta asi como tambien cuales parametros son opcionales y que valores viajan por defecto.
 
 
 los Medios de Pagos Cargados son los siguientes:
